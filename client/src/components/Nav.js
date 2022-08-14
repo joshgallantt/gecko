@@ -20,7 +20,7 @@ export default function Nav() {
   const handleLogout = async (e) => {
     console.log("handling logout");
     try {
-      const response = await axios.post(LOGOUT_URL, {
+      await axios.post(LOGOUT_URL, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
         credentials: "include",
