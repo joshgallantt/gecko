@@ -5,7 +5,7 @@ const path = require("path");
 require("dotenv").config({ path: __dirname + "/../.env" });
 const cors = require("cors");
 const express = require("express");
-const session = require("cookie-session");
+const session = require("express-session");
 const flash = require("express-flash");
 
 const PORT = process.env.PORT || 4000; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
@@ -18,11 +18,14 @@ app.enable("trust proxy");
 // Session
 app.use(
   session({
-    name: "session-id",
-    keys: [process.env.SECRET],
-    sameSite: "none",
-    secure: true,
-    maxAge: 1209600000,
+    cookie: {
+      secure: true,
+      maxAge: 1209600000,
+    },
+    // store: new RedisStore({ client: client }),
+    secret: process.env.SECRET,
+    saveUninitialized: false,
+    resave: false,
   })
 );
 
