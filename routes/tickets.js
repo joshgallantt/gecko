@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("../database");
 
-//Dooooooone
-
 //---------- Tickets Page Verbose List --------------
 router.get("/", function (req, res, next) {
   if (req.user.admin) {
@@ -28,8 +26,7 @@ router.get("/", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
-        return next();
+        return res.status(200).send(results.rows);
       }
     );
   } else {
@@ -57,8 +54,7 @@ router.get("/", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
-        return next();
+        return res.status(200).send(results.rows);
       }
     );
   }

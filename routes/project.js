@@ -12,8 +12,7 @@ router.get("/info/:projectID", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results.rows[0]);
-      return next();
+      return res.status(200).send(results.rows[0]);
     }
   );
 });
@@ -42,8 +41,7 @@ router.get("/:projectID/assigned", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results.rows);
-      return next();
+      return res.status(200).send(results.rows);
     }
   );
 });
@@ -68,8 +66,7 @@ router.get("/:projectID/available", function (req, res, next) {
         return next(err);
       }
       console.log(results);
-      res.status(200).send(results);
-      return next();
+      return res.status(200).send(results);
     }
   );
 });
@@ -88,8 +85,7 @@ router.post("/:projectID/add", function (req, res, next) {
       }
     );
   }
-  res.status(201).send("Created");
-  return next();
+  return res.status(201).send("Created");
 });
 
 //
@@ -103,8 +99,7 @@ router.delete("/:projectID/delete-member/:user_id", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send("Removed");
-        return next();
+        return res.status(200).send("Removed");
       }
     );
   }
@@ -148,8 +143,7 @@ router.get("/:projectID/tickets", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results.rows);
-      return next();
+      return res.status(200).send(results.rows);
     }
   );
 });
@@ -176,9 +170,7 @@ router.get("/:projectID/new-ticket-available", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      console.log("rez", results.rows);
-      res.status(200).send(results.rows);
-      return next();
+      return res.status(200).send(results.rows);
     }
   );
 });
@@ -208,8 +200,7 @@ router.post("/new-ticket/:projectID", function (req, res, next) {
       }
     }
   );
-  res.status(201).send(key);
-  return next();
+  return res.status(201).send(key);
 });
 
 ////////////////////////////////
@@ -264,8 +255,7 @@ router.get("/assigned-devs/:ticketID", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results.rows);
-      return next();
+      return res.status(200).send(results.rows);
     }
   );
 });
@@ -284,8 +274,7 @@ router.put("/update-ticket/:ticketID", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results.rows);
-      return next();
+      return res.status(200).send(results.rows);
     }
   );
 });
@@ -313,8 +302,7 @@ router.get("/get-comments/:ticketID", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results.rows);
-      return next();
+      return res.status(200).send(results.rows);
     }
   );
 });
@@ -333,8 +321,7 @@ router.post("/post-comment/:ticketID", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send("comment posted");
-      return next();
+      return res.status(200).send("comment posted");
     }
   );
 });
