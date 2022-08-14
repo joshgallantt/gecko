@@ -115,7 +115,7 @@ const Pie = (props) => {
           data={data}
         />
         <figcaption>
-          {data.length > 1 ? (
+          {data.length > 0 ? (
             data.map(function (d) {
               return (
                 <div key={d.title}>
