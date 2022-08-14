@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require("uuid");
 
 // --------- GET PROJECT LIST -------------------
 router.get("/project-list", function (req, res, next) {
-  if (req.user.admin) {
+  if (req.user.admin === true) {
     //Return all projects assigned to current user, and the users assigned to them.
     db.query(
       `SELECT distinct on (project.id)
@@ -30,7 +30,7 @@ router.get("/project-list", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
+        res.send(results.rows);
         return next();
       }
     );
@@ -59,7 +59,7 @@ router.get("/project-list", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
+        res.send(results.rows);
         return next();
       }
     );
@@ -69,7 +69,7 @@ router.get("/project-list", function (req, res, next) {
 //------- GET PRIORITY STATS -------------
 
 router.get("/ticket-stats/priority", function (req, res, next) {
-  if (req.user.admin) {
+  if (req.user.admin === true) {
     //Return ALL Ticket Stats
     db.query(
       `SELECT priority as title, cast(count(priority)as int) as value
@@ -84,7 +84,7 @@ router.get("/ticket-stats/priority", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
+        res.send(results.rows);
         return next();
       }
     );
@@ -107,7 +107,7 @@ router.get("/ticket-stats/priority", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
+        res.send(results.rows);
         return next();
       }
     );
@@ -117,7 +117,7 @@ router.get("/ticket-stats/priority", function (req, res, next) {
 //----------- GET STATUS STATS -----------------------
 
 router.get("/ticket-stats/status", function (req, res, next) {
-  if (req.user.admin) {
+  if (req.user.admin === true) {
     //Return ALL Ticket Stats
     db.query(
       `SELECT status as title, cast(count(status)as int) as value
@@ -127,7 +127,7 @@ router.get("/ticket-stats/status", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
+        res.send(results.rows);
         return next();
       }
     );
@@ -155,7 +155,7 @@ router.get("/ticket-stats/status", function (req, res, next) {
 //----------- GET TYPE STATS ----------------
 
 router.get("/ticket-stats/type", function (req, res, next) {
-  if (req.user.admin) {
+  if (req.user.admin === true) {
     //Return ALL Ticket Stats
     db.query(
       `SELECT type as title, cast(count(type)as int) as value
