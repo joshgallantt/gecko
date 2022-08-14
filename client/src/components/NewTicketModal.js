@@ -3,6 +3,7 @@ import { MultiSelect } from "react-multi-select-component";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { RadioGroup, Radio } from "react-radio-group";
+import { useNavigate } from "react-router";
 import "./css/NewProjectModal.css";
 
 const NewTicketModal = (props) => {
@@ -16,6 +17,7 @@ const NewTicketModal = (props) => {
   const [description, setDescription] = useState("");
   const [type, setType] = useState("Bug");
   const [priority, setPriority] = useState("Low");
+  const navigate = useNavigate();
 
   const getTeam = async () => {
     try {
@@ -46,14 +48,19 @@ const NewTicketModal = (props) => {
         }
       )
       .then((response) => {
-        console.log("THIS IS RESOIN", response.data);
-        window.location.href = `${
-          BASE_URL_REDIRECT +
-          "/project/" +
-          props.project +
-          "/ticket/" +
-          response.data
-        }`;
+        // window.location.href = `${
+        //   BASE_URL_REDIRECT +
+        //   "/project/" +
+        //   props.project +
+        //   "/ticket/" +
+        //   response.data
+        // }`;
+        navigate(`/project/${props.project}/ticket/${response.data}`, {
+          data: {
+            hi: "hi",
+          },
+          replace: false,
+        });
       })
       .catch(function (error) {
         console.log(error);
