@@ -1,0 +1,79 @@
+
+.radio label {
+  padding: 5px;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+  border-radius: 4px;
+  padding: 18x;
+  margin-right: 20px;
+}
+
+.radio {
+  display: flex;
+}
+
+.radio input {
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+   .form-label {
+    margin: 3px 0;
+   }
+
+   .input1{
+    padding: 0 10px;
+    height: 34px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+   }
+
+   
+   .input2{
+    height: 100px;
+    padding: 10px 10px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    resize: none;
+   }
+
+   .select {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 8px;
+   }
+  
+  .ReactModalPortal form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+
+  .save, .cancel {
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    width: 80px;
+    height: 35px;
+    cursor: pointer;
+  }
+
+  .ReactModalPortal .save {
+    background-color: mediumseagreen;
+  }
+
+  .ReactModalPortal .cancel {
+    background-color: tomato;
+  }
+
+  .dropdown-container:focus-within, .input1:focus-within, .input2:focus-within {
+    border-color: darkgray !important;
+    box-shadow: none !important;
+  }
