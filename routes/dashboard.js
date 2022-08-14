@@ -30,8 +30,7 @@ router.get("/project-list", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.send(results.rows);
-        return next();
+        return res.send(results.rows);
       }
     );
   } else {
@@ -59,8 +58,7 @@ router.get("/project-list", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.send(results.rows);
-        return next();
+        return res.send(results.rows);
       }
     );
   }
@@ -84,8 +82,7 @@ router.get("/ticket-stats/priority", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.send(results.rows);
-        return next();
+        return res.send(results.rows);
       }
     );
   } else {
@@ -107,8 +104,7 @@ router.get("/ticket-stats/priority", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.send(results.rows);
-        return next();
+        return res.send(results.rows);
       }
     );
   }
@@ -127,8 +123,7 @@ router.get("/ticket-stats/status", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.send(results.rows);
-        return next();
+        return res.send(results.rows);
       }
     );
   } else {
@@ -145,8 +140,7 @@ router.get("/ticket-stats/status", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
-        return next();
+        return res.status(200).send(results.rows);
       }
     );
   }
@@ -165,8 +159,7 @@ router.get("/ticket-stats/type", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
-        return next();
+        return res.status(200).send(results.rows);
       }
     );
   } else {
@@ -183,8 +176,7 @@ router.get("/ticket-stats/type", function (req, res, next) {
         if (err) {
           return next(err);
         }
-        res.status(200).send(results.rows);
-        return next();
+        return res.status(200).send(results.rows);
       }
     );
   }
@@ -201,8 +193,7 @@ router.get("/get-accounts", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results);
-      return next();
+      return res.status(200).send(results);
     }
   );
 });
@@ -227,8 +218,7 @@ router.post("/", function (req, res, next) {
             if (err) {
               return next(err);
             }
-            res.status(201).send("Created");
-            return next(err);
+            return res.status(201).send("Created");
           }
         );
       }
