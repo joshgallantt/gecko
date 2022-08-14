@@ -53,10 +53,14 @@ const NewProjectModal = (props) => {
   const saveOnClick = (e) => {
     e.preventDefault();
     axios
-      .post("/dashboard", JSON.stringify({ title, description, selected }), {
-        headers: { "Content-Type": "application/json" },
-        withCredentials: true,
-      })
+      .post(
+        "/api/dashboard",
+        JSON.stringify({ title, description, selected }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      )
       .then(() => {
         props.close();
         props.update();
