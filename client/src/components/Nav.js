@@ -5,6 +5,7 @@ import axios from "axios";
 import getCookies from "../utils/getCookies";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { GiGecko } from "react-icons/gi";
+import Cookies from "universal-cookie";
 
 export default function Nav() {
   const [click, setClick] = React.useState(false);
@@ -26,11 +27,11 @@ export default function Nav() {
         credentials: "include",
       });
       console.log("delete cookies");
-      cookies.remove("email");
-      cookies.remove("admin");
-      cookies.remove("last_name");
-      cookies.remove("first_name");
-      cookies.remove("sid");
+      Cookies.remove("email");
+      Cookies.remove("admin");
+      Cookies.remove("last_name");
+      Cookies.remove("first_name");
+      Cookies.remove("sid");
       console.log("nav to logout");
       navigate("/login", {
         data: {
