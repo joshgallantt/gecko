@@ -15,6 +15,7 @@ export default function Nav() {
 
   const state = getCookies();
   const navigate = useNavigate();
+  const cookies = new Cookies();
 
   const LOGOUT_URL = "/api/logout";
 
@@ -27,15 +28,7 @@ export default function Nav() {
         credentials: "include",
       });
       console.log("delete cookies");
-      Cookies.remove("email", {
-        path: "/",
-        domain: ".gecko-jg.herokuapp.com",
-      });
-      Cookies.remove("admin", { path: "/" });
-      Cookies.remove("last_name", { path: "/" });
-      Cookies.remove("first_name", { path: "/" });
-      Cookies.remove("sid", { path: "/" });
-      console.log("nav to logout", { path: "/" });
+      console.log(cookies.getAll());
       navigate("/login", {
         data: {
           logout: "logout",
