@@ -12,14 +12,16 @@ const Pie = (props) => {
   const addColorsToData = (response) => {
     console.log("COLORS", response, response.length);
     if (response.length === 0) {
+      console.log("length 0 being hit");
       return [{ title: "No Tickets!", value: 1, color: "mediumseagreen" }];
+    } else {
+      const colors = ["tomato", "sandybrown", "royalblue", "mediumseagreen"];
+      const colorData = response.map((i, index) => ({
+        ...i,
+        color: colors[index],
+      }));
+      return colorData;
     }
-    const colors = ["tomato", "sandybrown", "royalblue", "mediumseagreen"];
-    const colorData = response.map((i, index) => ({
-      ...i,
-      color: colors[index],
-    }));
-    return colorData;
   };
 
   const getPriority = async () => {
