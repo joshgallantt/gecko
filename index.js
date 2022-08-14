@@ -22,6 +22,7 @@ app.use(
       secure: true,
       maxAge: 1209600000,
     },
+    name: "sid",
     // store: new RedisStore({ client: client }),
     secret: process.env.SECRET,
     saveUninitialized: false,

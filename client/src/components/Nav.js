@@ -25,11 +25,13 @@ export default function Nav() {
         withCredentials: true,
         credentials: "include",
       });
-      document.cookie.split(";").forEach(function (c) {
-        document.cookie = c
-          .replace(/^ +/, "")
-          .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-      });
+      console.log("delete cookies");
+      cookies.remove("email");
+      cookies.remove("admin");
+      cookies.remove("last_name");
+      cookies.remove("first_name");
+      cookies.remove("first_name");
+      console.log("nav to logout");
       navigate("/login", {
         data: {
           logout: "logout",
