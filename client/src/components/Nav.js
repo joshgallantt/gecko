@@ -27,13 +27,15 @@ export default function Nav() {
         credentials: "include",
       });
       console.log("delete cookies");
-      browser.cookies.remove("email");
-      Cookies.remove("email");
-      Cookies.remove("admin");
-      Cookies.remove("last_name");
-      Cookies.remove("first_name");
-      Cookies.remove("sid");
-      console.log("nav to logout");
+      Cookies.remove("email", {
+        path: "/",
+        domain: ".gecko-jg.herokuapp.com",
+      });
+      Cookies.remove("admin", { path: "/" });
+      Cookies.remove("last_name", { path: "/" });
+      Cookies.remove("first_name", { path: "/" });
+      Cookies.remove("sid", { path: "/" });
+      console.log("nav to logout", { path: "/" });
       navigate("/login", {
         data: {
           logout: "logout",
