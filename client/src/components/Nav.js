@@ -27,6 +27,7 @@ export default function Nav() {
         credentials: "include",
       });
       console.log("delete cookies");
+      browser.cookies.remove("email");
       Cookies.remove("email");
       Cookies.remove("admin");
       Cookies.remove("last_name");
