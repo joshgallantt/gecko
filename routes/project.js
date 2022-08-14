@@ -158,7 +158,6 @@ router.get("/:projectID/tickets", function (req, res, next) {
 //------------ Create New Ticket and Assign Tasks Modal -----------------
 
 router.get("/:projectID/new-ticket-available", function (req, res, next) {
-  console.log("hit me baby");
   //Returns All Team Members Assigned To ProjectID
   db.query(
     `SELECT 

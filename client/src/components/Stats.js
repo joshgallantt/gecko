@@ -10,6 +10,7 @@ const Pie = (props) => {
   const [pending, setPending] = useState(true);
 
   const addColorsToData = (response) => {
+    console.log("COLORS", response);
     if (response.length === 0) {
       return [{ title: "No Tickets!", value: 1, color: "mediumseagreen" }];
     }
