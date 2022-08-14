@@ -30,7 +30,7 @@ export default function Nav() {
       cookies.remove("admin");
       cookies.remove("last_name");
       cookies.remove("first_name");
-      cookies.remove("first_name");
+      cookies.remove("sid");
       console.log("nav to logout");
       navigate("/login", {
         data: {
