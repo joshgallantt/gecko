@@ -1,0 +1,121 @@
+.ticket-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.ticket-info {
+    display: grid;
+    grid-template-areas:
+    'title title title title'
+    'ticket author description description'
+    'status priority type created'
+    'developers developers developers developers';
+    grid-column-gap: 10x;
+    grid-row-gap: 10px;
+    justify-items: stretch;
+    align-items: stretch;
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+ }
+
+ .ticket-info h6 {
+   color: mediumseagreen;
+ }
+
+ .ticket-info button {
+   width: fit-content;
+   height: fit-content;
+   padding: 6px 12px;
+   margin-top: 10px;
+   margin-bottom: 7px;
+   border-radius: 20px;
+   color: white;
+   cursor: pointer;
+   border: none;
+   background-color: mediumseagreen;
+ }
+
+
+ @media screen and (max-width: 650px) {
+   .ticket-info {
+      display: block;
+   }
+ }
+
+ .info-grid{
+   display: grid;
+   grid-template-areas:
+   'title title title title'
+   'ticket author description description'
+   'status priority type created'
+   'developers developers developers developers';
+   grid-column-gap: 10x;
+   grid-row-gap: 10px;
+   justify-items: stretch;
+   align-items: stretch;
+   background-color: white;
+   padding: 20px;
+   width: 100%;
+ }
+
+ .ticket-info-title{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 15px;
+   padding-bottom: 30px;
+ }
+
+ .ticket-info div {
+    padding: 6px;
+ }
+
+
+ .ticket-info-developers h1 {
+   margin-bottom: 10px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid gainsboro;
+ }
+ .ticket-info-developers-cols {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .ticket-info-developers-column {
+    justify-content: center;
+    flex-grow: 1;
+ }
+
+.ticket-info-title { grid-area: title; border-bottom: 1px solid gainsboro; }
+.ticket-info-ticket { grid-area: ticket; }
+.ticket-info-author { grid-area: author; }
+.ticket-info-description { grid-area: description; }
+.ticket-info-status { grid-area: status; }
+.ticket-info-priority { grid-area: priority; }
+.ticket-info-type { grid-area: type; }
+.ticket-info-created { grid-area: created; }
+.ticket-info-developers { grid-area: developers; }
+
+
+.Completed {
+  background-color: mediumseagreen !important;
+}
+
+.Urgent, .Bug, .Started { background-color: red !important;}
+
+.Progress, .Feature {
+  background-color: royalblue !important;
+}
+
+.Med, .Issue {
+  background-color: sandybrown !important;
+}
+
+.Low { background-color: royalblue !important;}
+
+.High {
+  background-color: darkorange !important;
+}

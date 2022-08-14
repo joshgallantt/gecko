@@ -1,0 +1,36 @@
+.project-list {
+  display: block;
+  background-color: white;
+  margin: 0 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.project-data-table {
+  border: 1px solid gainsboro;
+  padding: 0 20px;
+}
+
+.project-data-table-title {
+  background-color: white;
+  padding: 3vh 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-project-button{
+  background-color: cornflowerblue;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  text-align: 40px;
+}
+
+.button:hover {
+  filter:brightness(110%)
+}

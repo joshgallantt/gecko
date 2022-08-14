@@ -1,0 +1,38 @@
+.comment-container{
+    background-color: white;
+    margin-top: 20px;
+    padding: 25px;
+}
+
+.comment-title{
+    padding-top: 10px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.comment-input{
+    margin-top: 5px;
+    padding: 10px;
+    width: 90%;
+
+}
+
+.comment-button{
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    height: 40px;
+    width: 10%;
+}
+
+.comment-heading{
+    color: mediumseagreen;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.comment-wrapper{
+    border: 1px solid gainsboro;
+    margin: 24px 0;
+    padding: 10px;
+}

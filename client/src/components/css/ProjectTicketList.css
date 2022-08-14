@@ -1,0 +1,16 @@
+.project-ticket-list{
+    display: block;
+    width: 100%;
+    flex-grow: 3;
+    flex-shrink: 1;
+    margin-top: 20px;
+}
+
+.project-ticket-data-table{
+    background-color: white;
+    padding: 0 20px;
+}
+
+.button{
+    margin-left: 20px;
+}
