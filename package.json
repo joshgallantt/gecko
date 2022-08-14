@@ -21,7 +21,7 @@
         "express-flash": "^0.0.2",
         "express-session": "^1.17.3",
         "helmet": "^5.1.1",
-        "passport": "^0.6.0",
+        "passport": "^0.5.3",
         "passport-local": "^1.0.0",
         "pg": "^8.7.3",
         "redis": "^4.2.0",
