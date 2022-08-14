@@ -3,7 +3,6 @@ const passport = require("passport");
 const initialize = require("./passport");
 const path = require("path");
 require("dotenv").config({ path: __dirname + "/../.env" });
-const helmet = require("helmet");
 const cors = require("cors");
 const express = require("express");
 const session = require("cookie-session");
@@ -32,7 +31,6 @@ app.use(
 initialize(passport);
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(helmet());
 app.use(flash());
 app.use(cors({ origin: true, credentials: true })); //allow cross-origin resource sharing FROM origin ONLY, and accept credentials
 app.use(express.static("."));
