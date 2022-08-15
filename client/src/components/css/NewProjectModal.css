@@ -1,7 +1,8 @@
 
 .radio label {
   padding: 5px;
-  border: 1px solid #CCC;
+  /* border: 1px solid #CCC; */
+  border: none;
   cursor: pointer;
   z-index: 90;
   border-radius: 4px;
