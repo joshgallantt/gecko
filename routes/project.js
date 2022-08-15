@@ -230,8 +230,7 @@ router.get("/ticket-info/:ticketID", function (req, res, next) {
       if (err) {
         return next(err);
       }
-      res.status(200).send(results.rows);
-      return next();
+      return res.status(200).send(results.rows);
     }
   );
 });
