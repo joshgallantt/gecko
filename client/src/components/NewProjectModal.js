@@ -28,28 +28,6 @@ const NewProjectModal = (props) => {
     }
   };
 
-  const createProject = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post(
-        "/dashboard",
-        JSON.stringify({ title, description, selected }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
-    } catch (err) {
-      if (!err?.response) {
-        console.log("No Server Response");
-      } else if (err.response?.status === 409) {
-        console.log("Already Created");
-      } else {
-        console.log("Creation Failed");
-      }
-    }
-  };
-
   const saveOnClick = (e) => {
     e.preventDefault();
     axios
@@ -120,7 +98,12 @@ const NewProjectModal = (props) => {
         </form>
         <br />
         <div className="buttons">
-          <button form="form" type="submit" className="save">
+          <button
+            form="form"
+            type="submit"
+            className="save"
+            disabled={!selected && !title && !description}
+          >
             Create
           </button>
           <button className="cancel" onClick={props.close}>
