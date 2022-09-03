@@ -46,41 +46,22 @@ const AddMemberModal = (props) => {
       });
   };
 
-  const SaveButton = () => {
-    if (selected.length) {
-      return (
-        <button
-          form="form"
-          type="submit"
-          className="save"
-          onClick={saveOnClick}
-        >
-          Add
-        </button>
-      );
-    } else {
-      return (
-        <button form="form" type="submit" className="save disabled" disabled>
-          Add
-        </button>
-      );
-    }
-  };
-
   useEffect(() => {
     getUnassigned();
   }, []);
-
-  useEffect(() => {
-    SaveButton();
-  }, [selected]);
 
   if (!pending) {
     return (
       <section>
         <h1>Add Members</h1>
         <div className="buttons">
-          {SaveButton}
+          <button
+            className={selected.length ? "save" : "save disabled"}
+            disabled={!selected.length}
+            onClick={saveOnClick}
+          >
+            Add
+          </button>
           <button className="cancel" onClick={props.close}>
             Cancel
           </button>
