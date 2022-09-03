@@ -105,7 +105,7 @@ const NewProjectModal = (props) => {
             className={
               selected.length && title && description ? "save" : "save disabled"
             }
-            disabled={!selected.length && title && description}
+            disabled={!selected.length && !title && !description}
           >
             Create
           </button>
