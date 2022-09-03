@@ -48,14 +48,6 @@ const NewProjectModal = (props) => {
       });
   };
 
-  useEffect(() => {
-    getDevelopers();
-  }, []);
-
-  useEffect(() => {
-    console.log(selected, title, description);
-  }, [selected, title, description]);
-
   const SaveButton = () => {
     if (selected.length && title && description) {
       return (
@@ -64,11 +56,21 @@ const NewProjectModal = (props) => {
         </button>
       );
     } else {
-      <button form="form" type="submit" className="save disabled" disabled>
-        Create
-      </button>;
+      return (
+        <button form="form" type="submit" className="save disabled" disabled>
+          Create
+        </button>
+      );
     }
   };
+
+  useEffect(() => {
+    getDevelopers();
+  }, []);
+
+  useEffect(() => {
+    SaveButton();
+  }, [selected, title, description]);
 
   if (!pending) {
     return (

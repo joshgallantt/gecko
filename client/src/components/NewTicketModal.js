@@ -75,15 +75,21 @@ const NewTicketModal = (props) => {
         </button>
       );
     } else {
-      <button form="form" type="submit" className="save disabled" disabled>
-        Create
-      </button>;
+      return (
+        <button form="form" type="submit" className="save disabled" disabled>
+          Create
+        </button>
+      );
     }
   };
 
   useEffect(() => {
     getTeam();
   }, []);
+
+  useEffect(() => {
+    SaveButton();
+  }, [selected, title, description]);
 
   if (!pending) {
     return (
