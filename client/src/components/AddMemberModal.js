@@ -59,15 +59,21 @@ const AddMemberModal = (props) => {
         </button>
       );
     } else {
-      <button form="form" type="submit" className="save disabled" disabled>
-        Add
-      </button>;
+      return (
+        <button form="form" type="submit" className="save disabled" disabled>
+          Add
+        </button>
+      );
     }
   };
 
   useEffect(() => {
     getUnassigned();
   }, []);
+
+  useEffect(() => {
+    SaveButton();
+  }, [selected]);
 
   if (!pending) {
     return (
