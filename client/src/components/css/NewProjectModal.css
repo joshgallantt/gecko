@@ -70,6 +70,11 @@
     background-color: mediumseagreen;
   }
 
+  .ReactModalPortal .disabled {
+    background-color: gainsboro;
+    color: white;
+  }
+
   .ReactModalPortal .cancel {
     background-color: tomato;
   }

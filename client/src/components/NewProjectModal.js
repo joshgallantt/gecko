@@ -79,7 +79,6 @@ const NewProjectModal = (props) => {
             autoComplete="off"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
-            required
           />
           <br />
           <label className="form-label" htmlFor="description">
@@ -93,7 +92,6 @@ const NewProjectModal = (props) => {
             autoComplete="off"
             onChange={(e) => setDescription(e.target.value)}
             value={description}
-            required
           />
         </form>
         <br />
@@ -101,7 +99,9 @@ const NewProjectModal = (props) => {
           <button
             form="form"
             type="submit"
-            className="save"
+            className={
+              selected && title && description ? "save" : "save disabled"
+            }
             disabled={!selected && !title && !description}
           >
             Create
