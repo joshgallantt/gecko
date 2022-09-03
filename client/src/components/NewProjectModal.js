@@ -48,28 +48,12 @@ const NewProjectModal = (props) => {
       });
   };
 
-  const SaveButton = () => {
-    if (selected.length && title && description) {
-      return (
-        <button form="form" type="submit" className="save">
-          Create
-        </button>
-      );
-    } else {
-      return (
-        <button form="form" type="submit" className="save disabled" disabled>
-          Create
-        </button>
-      );
-    }
-  };
-
   useEffect(() => {
     getDevelopers();
   }, []);
 
   useEffect(() => {
-    SaveButton();
+    console.log(selected, title, description);
   }, [selected, title, description]);
 
   if (!pending) {
@@ -115,7 +99,16 @@ const NewProjectModal = (props) => {
         </form>
         <br />
         <div className="buttons">
-          {SaveButton}
+          <button
+            form="form"
+            type="submit"
+            className={
+              selected.length && title && description ? "save" : "save disabled"
+            }
+            disabled={!selected.length && title && description}
+          >
+            Create
+          </button>
           <button className="cancel" onClick={props.close}>
             Cancel
           </button>
