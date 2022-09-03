@@ -57,7 +57,7 @@ const AddMemberModal = (props) => {
         <div className="buttons">
           <button
             className={selected.length ? "save" : "save disabled"}
-            disabled={selected.length ? "true" : ""}
+            disabled={selected.length ? true : false}
             onClick={saveOnClick}
           >
             Add
