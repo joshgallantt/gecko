@@ -52,6 +52,10 @@ const NewProjectModal = (props) => {
     getDevelopers();
   }, []);
 
+  useEffect(() => {
+    console.log(selected, title, description);
+  }, [selected, title, description]);
+
   if (!pending) {
     return (
       <section>
