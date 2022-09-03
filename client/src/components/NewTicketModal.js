@@ -67,8 +67,21 @@ const NewTicketModal = (props) => {
       });
   };
 
+  const SaveButton = () => {
+    if (selected.length && title && description) {
+      return (
+        <button form="form" type="submit" className="save">
+          Create
+        </button>
+      );
+    } else {
+      <button form="form" type="submit" className="save disabled" disabled>
+        Create
+      </button>;
+    }
+  };
+
   useEffect(() => {
-    console.log("HERE ARE MY PROPADOOS", props.project);
     getTeam();
   }, []);
 
@@ -173,16 +186,7 @@ const NewTicketModal = (props) => {
         <br />
 
         <div className="buttons">
-          <button
-            form="form"
-            type="submit"
-            className={
-              selected.length && title && description ? "save" : "save disabled"
-            }
-            disabled={selected.length && title && description ? true : false}
-          >
-            Create
-          </button>
+          {SaveButton}
           <button className="cancel" onClick={props.close}>
             Cancel
           </button>

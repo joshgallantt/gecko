@@ -56,6 +56,20 @@ const NewProjectModal = (props) => {
     console.log(selected, title, description);
   }, [selected, title, description]);
 
+  const SaveButton = () => {
+    if (selected.length && title && description) {
+      return (
+        <button form="form" type="submit" className="save">
+          Create
+        </button>
+      );
+    } else {
+      <button form="form" type="submit" className="save disabled" disabled>
+        Create
+      </button>;
+    }
+  };
+
   if (!pending) {
     return (
       <section>
@@ -99,16 +113,7 @@ const NewProjectModal = (props) => {
         </form>
         <br />
         <div className="buttons">
-          <button
-            form="form"
-            type="submit"
-            className={
-              selected.length && title && description ? "save" : "save disabled"
-            }
-            disabled={selected.length && title && description ? true : false}
-          >
-            Create
-          </button>
+          {SaveButton}
           <button className="cancel" onClick={props.close}>
             Cancel
           </button>
