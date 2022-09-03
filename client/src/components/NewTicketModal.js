@@ -179,7 +179,7 @@ const NewTicketModal = (props) => {
             className={
               selected.length && title && description ? "save" : "save disabled"
             }
-            disabled={selected.length && title && description ? "true" : ""}
+            disabled={selected.length && title && description ? true : false}
           >
             Create
           </button>
