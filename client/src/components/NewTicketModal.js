@@ -173,7 +173,14 @@ const NewTicketModal = (props) => {
         <br />
 
         <div className="buttons">
-          <button form="form" type="submit" className="save">
+          <button
+            form="form"
+            type="submit"
+            className={
+              selected.length && title && description ? "save" : "save disabled"
+            }
+            disabled={selected.length && title && description ? "true" : ""}
+          >
             Create
           </button>
           <button className="cancel" onClick={props.close}>

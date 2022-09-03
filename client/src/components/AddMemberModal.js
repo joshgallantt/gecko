@@ -55,7 +55,11 @@ const AddMemberModal = (props) => {
       <section>
         <h1>Add Members</h1>
         <div className="buttons">
-          <button className="save" onClick={saveOnClick}>
+          <button
+            className={selected.length ? "save" : "save disabled"}
+            disabled={selected.length ? "true" : ""}
+            onClick={saveOnClick}
+          >
             Add
           </button>
           <button className="cancel" onClick={props.close}>

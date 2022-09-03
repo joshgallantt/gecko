@@ -63,7 +63,6 @@ const NewProjectModal = (props) => {
         <div className="devel">
           <label className="form-label">Select Developers:</label>
           <div className="select">
-            {console.log(developers, selected)}
             <MultiSelect
               options={developers}
               value={selected}
@@ -104,9 +103,9 @@ const NewProjectModal = (props) => {
             form="form"
             type="submit"
             className={
-              selected && title && description ? "save" : "save disabled"
+              selected.length && title && description ? "save" : "save disabled"
             }
-            disabled={!selected && !title && !description}
+            disabled={selected.length && title && description ? "true" : ""}
           >
             Create
           </button>
